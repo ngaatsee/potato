@@ -7,8 +7,6 @@
           alert("You didn't enter a name.");
         }
       }
-
- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   
 const map = L.map('map').setView([28.3949, 84.1240], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
