@@ -8,12 +8,12 @@
         }
       }
   
-const map = L.map('map').setView([28.3949, 84.1240], 5);
+ const map = L.map('map').setView([28.3949, 84.1240], 5);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-   const tracePoints = [
+    const tracePoints = [
       [29.653, 91.117],   // Lhasa
       [27.7172, 85.324],  // Kathmandu
       [32.219, 76.323]    // Dharamshala
@@ -26,4 +26,3 @@ const map = L.map('map').setView([28.3949, 84.1240], 5);
     L.marker(tracePoints[0]).addTo(map).bindPopup('Lhasa');
     L.marker(tracePoints[1]).addTo(map).bindPopup('Kathmandu');
     L.marker(tracePoints[2]).addTo(map).bindPopup('Dharamshala');
-
