@@ -15,7 +15,7 @@
     const tracePoints = [
       [29.653, 91.117],   // Lhasa
       [27.7172, 85.324],  // Kathmandu
-      [32.219, 76.323]    // Dharamshala
+      [12.4026,75.9812],  // Bylakuppe
     ];
 
     const pathLine = L.polyline(tracePoints, { color: 'red' }).addTo(map);
