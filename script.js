@@ -13,8 +13,8 @@
     }).addTo(map);
 
     const tracePoints = [
-      [29.653, 91.117],   // Lhasa
-      [27.7172, 85.324],  // Kathmandu
+      [31.9058, 102.206],   // Barkham
+      [28.2096, 83.9595],  // Pokhara
       [12.4026,75.9812],  // Bylakuppe
     ];
 
