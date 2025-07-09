@@ -16,7 +16,7 @@
       [31.9058, 102.206],   // Barkham
       [28.2096, 83.9595],  // Pokhara
       [12.4026,75.9812],  // Bylakuppe
-      [37.9161,122.3108],  // El Cerrito
+      [37.9161,-122.3108],  // El Cerrito
           ];
 
     const pathLine = L.polyline(tracePoints, { color: 'red' }).addTo(map);
