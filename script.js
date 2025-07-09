@@ -22,6 +22,6 @@
     
     map.fitBounds(pathLine.getBounds());
 
-    L.marker(tracePoints[0]).addTo(map).bindPopup('Lhasa');
-    L.marker(tracePoints[1]).addTo(map).bindPopup('Kathmandu');
-    L.marker(tracePoints[2]).addTo(map).bindPopup('Dharamshala');
+    L.marker(tracePoints[0]).addTo(map).bindPopup('Barkham');
+    L.marker(tracePoints[1]).addTo(map).bindPopup('Pokhara');
+    L.marker(tracePoints[2]).addTo(map).bindPopup('Bylakuppe');
