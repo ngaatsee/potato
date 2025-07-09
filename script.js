@@ -14,7 +14,7 @@
     }).addTo(map);
 
     const tracePoints = [
-      [29.653, 91.117],   // Lhasa
+      [31.8061, 98.5809],   // Kham Dege
       [27.7172, 85.324],  // Kathmandu
       [32.219, 76.323]    // Dharamshala
     ];
