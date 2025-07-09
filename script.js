@@ -16,7 +16,7 @@
     const tracePoints = [
       [31.8061, 98.5809],   // Kham Dege
       [34.1525, 77.5770],  // Ladakh
-      [37.7749, 122.4194]    // SF Bay Area
+      [37.828724, -122.355537]    // SF Bay Area
     ];
 
     const pathLine = L.polyline(tracePoints, { color: 'red' }).addTo(map);
