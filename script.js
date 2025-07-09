@@ -16,13 +16,13 @@
     const tracePoints = [
       [31.8061, 98.5809],   // Kham Dege
       [34.1525, 77.5770],  // Ladakh
-      [32.219, 76.323]    // Dharamshala
+      [37.7749, 122.4194]    // SF Bay Area
     ];
 
     const pathLine = L.polyline(tracePoints, { color: 'red' }).addTo(map);
     
     map.fitBounds(pathLine.getBounds());
 
-    L.marker(tracePoints[0]).addTo(map).bindPopup('Lhasa');
-    L.marker(tracePoints[1]).addTo(map).bindPopup('Kathmandu');
-    L.marker(tracePoints[2]).addTo(map).bindPopup('Dharamshala');
+    L.marker(tracePoints[0]).addTo(map).bindPopup('Kham Dege');
+    L.marker(tracePoints[1]).addTo(map).bindPopup('Ladakh');
+    L.marker(tracePoints[2]).addTo(map).bindPopup('SF Bay Area');
