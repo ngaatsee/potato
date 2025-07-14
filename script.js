@@ -8,40 +8,50 @@
         }
       }
       */
-// Initialize the map centered near Methok's village
-  // Initialize the map centered near MIT
+// Initialize the map centered near village
+  // Initialize the map centered between lhasa and MIT
   const map = L.map('map').setView([30.5, 85], 5);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
-  const village= [29.1035, 92.5066];
-  const MIT = [42.3601,71.0942];
+
+  const village = [29.1035, 92.5066];
+  const lhasa = [29.6578, 91.1175];
+  const MIT = [42.3601, 71.0942]; 
 
 
   const storyPanel = document.getElementById('story-panel');
 
   // Marker for village
-  L.marker(Methok's village).addTo(map)
+  L.marker(village).addTo(map)
     .bindPopup("Methok's village")
     .on('click', () => {
       storyPanel.innerHTML = `
         <h2>Methok's village</h2>
-        <p>Methok's village where she was born and raised.
+        <p><strong>Methok's village</strong> where she was born and raised.
       `;
     });
 
-  // Marker for MIT
-  L.marker(MIT).addTo(map)
-    .bindPopup("MIT")
+  // Marker for Lhasa
+  L.marker(lhasa).addTo(map)
+    .bindPopup("Lhasa")
     .on('click', () => {
       storyPanel.innerHTML = `
-        <h2>MIT</h2>
-        <p>MIT is a world leading private university in Cambridge, Massachusetts, best known for excellence in STEM fields, including Computer Science.
+        <h2>Lhasa</h2>
+        <p><strong>Lhasa</strong> is the capital of tibet.
       `;
     });
-
-  const path = L.polyline([Methok's village, MIT], {
+    // Marker for MIT
+      L.marker(MIT).addTo(map)
+        .bindPopup("MIT")
+        .on('click', () => {
+          storyPanel.innerHTML = `
+            <h2>Massachusetts Institute of Technology</h2>
+            <p>MIT is a world leading private university in Cambridge, Massachusetts, best known for excellence in STEM fields, including computer science.
+          `;
+        });
+  const path = L.polyline([village, lhasa, MIT], {
     color: 'red',
     weight: 4
   }).addTo(map);
