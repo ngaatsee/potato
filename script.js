@@ -33,29 +33,6 @@
       `;
     });
 
-  // Marker for Lhasa
-  L.marker(lhasa).addTo(map)
-    .bindPopup("📍 Lhasa")
-    .on('click', () => {
-      storyPanel.innerHTML = `
-        <h2>📖 Lhasa</h2>
-        <p><strong>Lhasa</strong> became the capital of Tibet during the 7th century under King Songtsen Gampo. With the construction of the Potala Palace and Jokhang Temple, it evolved into the center of Tibetan political power and Buddhist life — a place of unification and pilgrimage.</p>
-      `;
-    });
-    // Marker for Dharamsala
-      L.marker(dharamsala).addTo(map)
-        .bindPopup("📍 Dharamshala")
-        .on('click', () => {
-          storyPanel.innerHTML = `
-            <h2>📖 Dharamshala</h2>
-            <p>After the 1959 uprising in Lhasa, His Holiness the 14th Dalai Lama fled Tibet and found refuge in Dharamsala, India. There, the Tibetan Government-in-Exile was established — not just as a political structure, but as a cultural lifeline. In this Himalayan town, Tibetans rebuilt schools, monasteries, and institutions to preserve their language, religion, and identity. Though far from their homeland, Dharamsala has become the third symbolic capital of Tibet — a place where memory, resilience, and hope continue to thrive. </p>
-          `;
-        });
-  const path = L.polyline([yumbhulhagang, lhasa, dharamsala], {
-    color: 'red',
-    weight: 4
-  }).addTo(map);
-
   map.fitBounds(path.getBounds(), {
     paddingTopLeft: [50, 50],
     paddingBottomRight: [50, 50],
