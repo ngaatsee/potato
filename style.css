@@ -16,11 +16,11 @@ body {
 }
 /* Header Section */
 .site-header {
-  background-color: #3498db;
-  color: white;
+  background-color: #FDFD96;
+  color: yellow;
   padding: 30px 20px;
   text-align: center;
-  border-bottom: 4px solid #2980b9;
+  border-bottom: 4px solid #FDFD96;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
