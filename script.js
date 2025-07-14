@@ -18,7 +18,7 @@
 
   const village = [29.1035, 92.5066];
   const lhasa = [29.6578, 91.1175];
-  const MIT = [42.3601, 71.0942]; 
+  const MIT = [42.3601, -71.0942]; 
 
 
   const storyPanel = document.getElementById('story-panel');
