@@ -11,11 +11,11 @@ let player = { x: 20, y: 315, size: 40 };
 let storyIndex = 0;
 let story = [
   "Methok lived in a poor village in Tibet.",
-  "She dreamed of becoming a successful computer scientist.",
-  "One morning, she began her long walk north and met a wise guide.",
-  "She got into MIT and became a computer scientist.",
-  "She went back to improve her village and support Tibetan people.",
-  "Each coin she found told a piece of her story."
+  "She comes across a man who she helps, and in return he helps her study further.",
+  "She went back to improve her village and help tibetans.",
+  "Kindness has a way of coming back to you.",
+  "She attended MIT and became a computer scientist.",
+  "She dreamed of becoming a successful computer scientist."
 ];
 
 function preload() {
