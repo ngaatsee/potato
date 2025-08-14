@@ -46,7 +46,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 400);
+  let cv = createCanvas(600, 400);
+  cv.parent('game');
   noSmooth();
 
   // Start with chapter 1 setup
