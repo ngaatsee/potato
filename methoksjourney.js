@@ -4,20 +4,21 @@ let bgImage;
 let coins = [];
 let showMessage = false;
 let messageTimer = 0;
-
 let gameState = "start";
 let player = { x: 20, y: 315, size: 40 };
+let confetti = [];
+let showConfetti = false;
+let resetButton; // Declare variable for the reset button
 
 let storyIndex = 0;
 let story = [
-  "Methok lived in a poor village in Tibet.",
+ "Methok lived in a poor village in Tibet.",
   "She comes across a man who she helps, and in return he helps her study further.",
   "She went back to improve her village and help tibetans.",
   "Kindness has a way of coming back to you.",
   "She attended MIT and became a computer scientist.",
   "She dreamed of becoming a successful computer scientist."
 ];
-
 function preload() {
   methok = loadImage("Methok.png");
   coinImg = loadImage("Coin.png");
@@ -26,7 +27,8 @@ function preload() {
 
 function setup() {
   createCanvas(600, 400); // Define the size of the canvas
-
+  
+  // Create coins positions
   coins = [
     { x: 60, y: 300, collected: false },
     { x: 270, y: 325, collected: false },
@@ -36,7 +38,12 @@ function setup() {
     { x: 200, y: 325, collected: false }
   ];
 
-  noSmooth();  // Smooth graphics are turned off for a pixelated style (optional)
+  // Create the reset button and position it at the top left
+  resetButton = createButton("Reset");
+  resetButton.position(10, 10); // Place the button in the top-left corner
+  resetButton.mousePressed(resetGame); // Attach the reset event
+
+  noSmooth(); // Smooth graphics are turned off for a pixelated style (optional)
 }
 
 function draw() {
@@ -47,6 +54,26 @@ function draw() {
     drawCoins();
     drawPlayer();
     showStoryMessage();
+
+    if (showConfetti) {
+      // Generate confetti continuously
+      for (let i = 0; i < 5; i++) {
+        confetti.push(new ConfettiPiece(random(width), random(-50, 0)));
+      }
+
+      // Update and draw confetti
+      for (let i = confetti.length - 1; i >= 0; i--) {
+        confetti[i].update();
+        confetti[i].draw();
+
+        // Remove confetti if it goes off-screen to manage performance
+        if (confetti[i].y > height) {
+          confetti.splice(i, 1);
+        }
+      }
+
+      showEndMessage(); // Show "The End" message
+    }
   }
 }
 
@@ -77,8 +104,11 @@ function drawPlayer() {
 }
 
 function drawCoins() {
+  let allCollected = true;
+
   for (let i = 0; i < coins.length; i++) {
     if (!coins[i].collected) {
+      allCollected = false;
       image(coinImg, coins[i].x, coins[i].y, 30, 30);
 
       // Check if player collected the coin
@@ -89,6 +119,10 @@ function drawCoins() {
         messageTimer = millis();
       }
     }
+  }
+
+  if (allCollected) {
+    showConfetti = true;
   }
 }
 
@@ -110,6 +144,13 @@ function showStoryMessage() {
   }
 }
 
+function showEndMessage() {
+  fill(0); // Set the fill color to black
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text("The End", width / 2, height / 2 - 50); // Move text slightly to the top
+}
+
 function keyPressed() {
   if (gameState === "start") {
     gameState = "play";
@@ -120,4 +161,37 @@ function mousePressed() {
   if (gameState === "start") {
     gameState = "play";
   }
+}
+
+function resetGame() {
+  gameState = "start"; // Change game state to start
+  player.x = 20;
+  player.y = 315;
+  showConfetti = false;
+  confetti = []; // Clear confetti array
+  storyIndex = 0;
+  showMessage = false;
+
+  // Reset coins
+  for (let i = 0; i < coins.length; i++) {
+    coins[i].collected = false;
+  }
+}
+
+function ConfettiPiece(x, y) {
+  this.x = x;
+  this.y = y;
+  this.size = random(5, 10);
+  this.color = color(random(255), random(255), random(255));
+
+  this.update = function() {
+    this.y += random(1, 3);
+    this.x += random(-1, 1);
+  };
+
+  this.draw = function() {
+    fill(this.color);
+    noStroke();
+    ellipse(this.x, this.y, this.size, this.size);
+  };
 }
