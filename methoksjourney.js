@@ -38,11 +38,11 @@ let buildSteps = 0; // 0: none, 1: servers, 2: data, 3: train (done)
 // =========================
 function preload() {
   // Core sprites (use your filenames; fallback safe)
-  methok = loadImage("Methok.png");
-  coinImg = loadImage("Coin.png");
-  bgImage = loadImage("background.png");
+  methok = loadImage("images/Methok.png");
+  coinImg = loadImage("images/Coin.png");
+  bgImage = loadImage("images/background.png");
   // Optional: a beggar sprite
-  beggarImg = loadImage("beggar.png", () => {}, () => { beggarImg = null; });
+  beggarImg = loadImage("images/beggar.png", () => {}, () => { beggarImg = null; });
 }
 
 function setup() {
